@@ -26,7 +26,10 @@ public class MainActivity extends AppCompatActivity {
                 .build()
                 .inject(this);
 
-        presenter.setColorImage(ResourcesCompat.getDrawable(getResources(), R.drawable.hangouts, getTheme()));
+        presenter.setColorImage(
+                ResourcesCompat.getDrawable(getResources(),
+                        R.drawable.hangouts,
+                        getTheme()));
 
         ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         binding.setPresenter(presenter);
