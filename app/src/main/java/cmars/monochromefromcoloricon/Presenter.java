@@ -5,10 +5,9 @@ import android.graphics.drawable.Drawable;
 
 import javax.inject.Inject;
 
+import cmars.monochromefromcoloricon.helpers.ImageHelper;
 import lombok.Data;
 import timber.log.Timber;
-
-import static cmars.monochromefromcoloricon.ImageHelper.createBlackAndWhite;
 
 /**
  * Created by Constantine Mars on 1/4/17.
@@ -27,7 +26,7 @@ public class Presenter {
     public void setColorImage(Drawable image) {
         colorImage = image;
         monochromeImage = new BitmapDrawable(
-                createBlackAndWhite(((BitmapDrawable) colorImage).getBitmap())
+                ImageHelper.createWhiteIconBasedOnVibrantColor(((BitmapDrawable) colorImage).getBitmap())
         );
     }
 }
